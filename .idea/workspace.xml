@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13b94180-b29e-4ae6-aa6e-0d51941ad520" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/repositories/UserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/user.java" afterDir="false" />
     </list>
@@ -42,7 +42,7 @@
     "Docker.docker-compose.yaml: Compose Deployment.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "Merging master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/GF63/OneDrive/Bureau/PFA",
     "project.structure.last.edited": "Project",
