@@ -9,11 +9,10 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document
+@Document(collection = "user")
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class user {
+public class User {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private String id;
