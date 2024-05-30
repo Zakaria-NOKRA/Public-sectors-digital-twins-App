@@ -5,16 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13b94180-b29e-4ae6-aa6e-0d51941ad520" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/ReportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/Report.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/repositories/ReportRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/services/ReportService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/PfaApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/PfaApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/user.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/repositories/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/PfaApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/PfaApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/services/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +61,7 @@
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.PfaApplication">
     <configuration name="PfaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.PFA.PfaApplication" />
       <module name="PFA" />
@@ -90,8 +91,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Application.PfaApplication" />
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>

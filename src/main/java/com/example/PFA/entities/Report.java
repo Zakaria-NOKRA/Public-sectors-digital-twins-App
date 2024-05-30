@@ -6,22 +6,20 @@ import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Data
-@Document(collection = "user")
+@Document(collection = "report")
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class Report {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String name;
-    private String surname;
-    private String phone;
-    private String cin;
-
-    @DBRef
-    private Report report;
+    private String location;
+    private String description;
+    private List<User> users;
 }

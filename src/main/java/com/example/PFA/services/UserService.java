@@ -37,4 +37,8 @@ public class UserService {
     public void deleteUser(String id) {
         userRepository.deleteById(id);
     }
+
+    public List<User> getUsersByReport(String reportId) {
+        return userRepository.findByReportId(reportId);
+    }
 }
