@@ -8,16 +8,18 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.List;
+
 @Data
-@Document
+@Document(collection = "report")
 @AllArgsConstructor
 @NoArgsConstructor
-public class user {
-    @GeneratedValue(strategy = GenerationType.AUTO)
+public class Report {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private String id;
     private String name;
-    private String surname;
-    private String phone;
-    private String cin;
+    private String location;
+    private String description;
+    private List<User> users;
 }
