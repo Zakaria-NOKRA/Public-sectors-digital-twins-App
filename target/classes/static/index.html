@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="main-container">
+    <div class="container" id="container1">
+        <h1>Upload your CIN</h1>
+        <div>
+            <input type="file" id="fileInput1" accept="image/*" style="display: none;">
+            <button onclick="openFileInput('fileInput1')">Upload Image</button>
+        </div>
+        <div id="previewContainer1">
+            <h2>Preview:</h2>
+            <img id="previewImage1" src="" alt="Uploaded or Captured" style="width: 100%;">
+        </div>
+        <div class="check-mark" id="checkMark1"></div>
+    </div>
+
+    <div class="container" id="container2">
+        <h1>Take a photo</h1>
+        <div>
+            <button onclick="openCamera('cameraContainer2', 'video2')">Open Camera</button>
+            <div id="cameraContainer2" style="display: none;">
+                <video id="video2" width="100%"></video>
+                <button onclick="takePicture('video2', 'previewImage2')">Take Picture</button>
+            </div>
+        </div>
+        <div id="previewContainer2">
+            <h2>Preview:</h2>
+            <img id="previewImage2" src="" alt="Uploaded or Captured" style="width: 100%;">
+        </div>
+        <div class="check-mark" id="checkMark2"></div>
+    </div>
+    <div class="verify-button">
+        <button onclick="redirectToVerifyPage()">Verify</button>
+    </div>
+</div>
+<script src="js/main1.js"></script>
+</body>
+</html>
