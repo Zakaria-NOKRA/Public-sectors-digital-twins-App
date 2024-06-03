@@ -1,0 +1,691 @@
+
+
+
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Site keywords here">
+    <meta name="description" content="">
+    <meta name='copyright' content=''>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        .form-container {
+             background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+             padding: 30px;
+             border-radius: 15px;
+             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+             margin-top: 20px;
+             color: #fff;
+         }
+         .form-header {
+             background: rgba(0, 0, 0, 0.1);
+             padding: 10px;
+             border-radius: 5px;
+             margin-bottom: 20px;
+             text-align: center;
+             font-weight: bold;
+         }
+         .form-label {
+             font-weight: bold;
+             color: #fff;
+         }
+         .form-control {
+             border: none;
+             border-radius: 5px;
+             padding: 10px;
+             margin-bottom: 15px;
+             background: rgba(255, 255, 255, 0.2);
+             color: #fff;
+         }
+         .form-control::placeholder {
+             color: rgba(255, 255, 255, 0.5);
+         }
+         .form-check-label {
+             color: #fff;
+         }
+         .form-check-input {
+             margin-right: 10px;
+         }
+         .form-control:focus {
+             outline: none;
+             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+         }
+         .d-flex {
+             display: flex;
+         }
+         .me-2 {
+             margin-right: 10px;
+         }
+
+
+
+         .section-title {
+
+             color: black;
+             padding: 10px;
+             margin-top: 20px;
+             margin-bottom: 10px;
+             border-radius: 4px;
+             font-size: 18px;
+         }
+
+
+
+         .form-group {
+             margin-bottom: 15px;
+         }
+         .form-group label {
+             display: block;
+             margin-bottom: 5px;
+             font-weight: bold;
+         }
+         .form-group input[type="text"],
+         .form-group input[type="date"],
+         .form-group input[type="time"],
+         .form-group input[type="file"],
+         .form-group textarea,
+         .form-group select {
+             width: calc(100% - 22px);
+             padding: 10px;
+             border: 2px solid #4a90e2;
+             border-radius: 4px;
+             font-size: 16px;
+         }
+         button[type="submit"] {
+             background-color: #4a90e2;
+             color: white;
+             padding: 10px 20px;
+             border: none;
+             border-radius: 4px;
+             cursor: pointer;
+             font-size: 16px;
+         }
+         button[type="submit"]:hover {
+             background-color: #357ab8;
+         }
+         .form-group button {
+             margin-top: 10px;
+             background-color: #4a90e2;
+             color: white;
+             padding: 10px 20px;
+             border: none;
+             border-radius: 4px;
+             cursor: pointer;
+             font-size: 16px;
+         }
+         .form-group button:hover {
+             background-color: #357ab8;
+         }
+         .preview-container {
+             margin-top: 10px;
+         }
+         .preview-container h2 {
+             font-size: 16px;
+             margin-bottom: 5px;
+         }
+         .preview-container img {
+             width: 100%;
+             max-height: 400px;
+             object-fit: contain;
+         }
+    </style>
+
+    <!-- Title -->
+    <title>Public Sector Digitalisation</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Nice Select CSS -->
+    <link rel="stylesheet" href="css/nice-select.css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- icofont CSS -->
+    <link rel="stylesheet" href="css/icofont.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" href="css/slicknav.min.css">
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet" href="css/owl-carousel.css">
+    <!-- Datepicker CSS -->
+    <link rel="stylesheet" href="css/datepicker.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="css/animate.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!-- Medipro CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader">
+    <div class="loader">
+        <div class="loader-outter"></div>
+        <div class="loader-inner"></div>
+
+        <div class="indicator">
+            <svg width="16px" height="12px">
+                <polyline id="back" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+                <polyline id="front" points="1 6 4 6 6 11 10 1 12 6 15 6"></polyline>
+            </svg>
+        </div>
+    </div>
+</div>
+<!-- End Preloader -->
+
+
+<!-- Header Area -->
+<header class="header" >
+    <!-- Topbar -->
+    <div class="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-5 col-12">
+                    <!-- Contact -->
+                    <ul class="top-link">
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Services</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <!-- End Contact -->
+                </div>
+                <div class="col-lg-6 col-md-7 col-12">
+                    <!-- Top Contact -->
+                    <ul class="top-contact">
+                        <li><i class="fa fa-phone"></i>+880 1234 56789</li>
+                        <li><i class="fa fa-envelope"></i><a href="mailto:support@yourmail.com">support@yourmail.com</a></li>
+                    </ul>
+                    <!-- End Top Contact -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Topbar -->
+    <!-- Header Inner -->
+    <div class="header-inner">
+        <div class="container">
+            <div class="inner">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-12">
+                        <!-- Start Logo -->
+                        <div class="logo">
+                            <a href="index.html"><img src="img/logo1.png" alt="#"></a>
+                        </div>
+                        <!-- End Logo -->
+                        <!-- Mobile Nav -->
+                        <div class="mobile-nav"></div>
+                        <!-- End Mobile Nav -->
+                    </div>
+                    <div class="col-lg-7 col-md-9 col-12">
+                        <!-- Main Menu -->
+                        <div class="main-menu">
+                            <nav class="navigation">
+                                <ul class="nav menu">
+                                    <li class="active"><a href="#">Home <i class="icofont-rounded-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="verify.html">Home Page</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Services <i class="icofont-rounded-down"></i></a>
+                                        <ul class="dropdown">
+                                            <li><a href="passeport.html">Passeport</a></li>
+                                            <li><a href="constat.html">Constat</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--/ End Main Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End Header Inner -->
+</header>
+<!-- End Header Area -->
+
+
+
+<!-- Start Feautes -->
+<section class="Feautes section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>We will help you get your Constat step by step </h2>
+                    <img src="img/section-img.png" alt="#">
+                    <p>Le passeport biométrique est délivré sans condition d’âge à tout citoyen marocain qui en fait la demande, sauf décision judiciaire qui s’y oppose.
+
+                        Il est délivré sur demande de l’intéressé ou, lorsqu’il s’agit d’un mineur ou d’un majeur placé sous tutelle, de l’un de ses parents ou, à défaut, de son représentant légal .</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h1>Constat d'Accident Automobile</h1>
+            <form>
+                <div class="section-title">Informations de l'Accident</div>
+                <div class="form-group">
+                    <label for="date_accident">Date de l'accident</label>
+                    <input type="date" id="date_accident" name="date_accident" required>
+                </div>
+                <div class="form-group">
+                    <label for="heure_accident">Heure de l'accident</label>
+                    <input type="time" id="heure_accident" name="heure_accident" required>
+                </div>
+                <div class="form-group">
+                    <label for="lieu_accident">Lieu de l'accident</label>
+                    <input type="text" id="lieu_accident" name="lieu_accident" required>
+                </div>
+                <div class="form-group">
+                    <label for="blesse">Blessés</label>
+                    <select id="blesse" name="blesse" required>
+                        <option value="non">Non</option>
+                        <option value="oui">Oui</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="temoins">Témoins</label>
+                    <textarea id="temoins" name="temoins" rows="2" required></textarea>
+                </div>
+
+                <div class="section-title">Conducteur A</div>
+                <div class="vehicle-section">
+                    <div class="form-group">
+                        <label for="a_driver_name">Nom du conducteur</label>
+                        <input type="text" id="a_driver_name" name="a_driver_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="a_driver_address">Adresse</label>
+                        <textarea id="a_driver_address" name="a_driver_address" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="a_driver_phone">Téléphone</label>
+                        <input type="text" id="a_driver_phone" name="a_driver_phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="a_driver_license">Permis de conduire n°</label>
+                        <input type="text" id="a_driver_license" name="a_driver_license" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="a_driver_license_validity">Permis valable jusqu'au</label>
+                        <input type="date" id="a_driver_license_validity" name="a_driver_license_validity" required>
+                    </div>
+                </div>
+
+                <div class="section-title">Véhicule A</div>
+                <div class="vehicle-section">
+                    <div class="form-group">
+                        <label for="a_vehicle_make">Marque, type</label>
+                        <input type="text" id="a_vehicle_make" name="a_vehicle_make" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="a_vehicle_registration">N° d'immatriculation</label>
+                        <input type="text" id="a_vehicle_registration" name="a_vehicle_registration" required>
+                    </div>
+                </div>
+
+                <div class="section-title">Assurance A</div>
+                <div class="vehicle-section">
+                    <div class="form-group">
+                        <label for="a_insurance_name">Nom de la société d'assurance</label>
+                        <input type="text" id="a_insurance_name" name="a_insurance_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="a_insurance_number">N° de contrat</label>
+                        <input type="text" id="a_insurance_number" name="a_insurance_number" required>
+                    </div>
+                </div>
+
+                <div class="section-title">Circonstances du Véhicule A</div>
+                <div class="form-group">
+                    <label>Cochez les cases appropriées</label>
+                    <label><input type="checkbox" name="a_circumstance" value="stationnement"> En stationnement / l'arrêt</label>
+                    <label><input type="checkbox" name="a_circumstance" value="quittait_stationnement"> Quittait un stationnement</label>
+                    <label><input type="checkbox" name="a_circumstance" value="prenait_stationnement"> Prenait un stationnement</label>
+                    <label><input type="checkbox" name="a_circumstance" value="ouvrant_portiere"> Ouvrait une portière</label>
+                    <label><input type="checkbox" name="a_circumstance" value="sortait_garage"> Sortait d'un parking, d'un lieu privé, d'un chemin de terre</label>
+                    <label><input type="checkbox" name="a_circumstance" value="s_engageait_parking"> S'engageait dans un parking, un lieu privé, un chemin de terre</label>
+                    <label><input type="checkbox" name="a_circumstance" value="engageait_rond_point"> S'engageait sur une place à sens giratoire</label>
+                    <label><input type="checkbox" name="a_circumstance" value="roulait_rond_point"> Roulait dans une place à sens giratoire</label>
+                    <label><input type="checkbox" name="a_circumstance" value="heurtait_arriere"> Heurtait à l'arrière en roulant dans le même sens et sur une même file</label>
+                    <label><input type="checkbox" name="a_circumstance" value="roulait_meme_sens"> Roulait dans le même sens et sur une même file</label>
+                    <label><input type="checkbox" name="a_circumstance" value="roulait_diff_sens"> Roulait dans les mêmes sens mais sur des files différentes</label>
+                    <label><input type="checkbox" name="a_circumstance" value="changeait_file"> Changeait de file</label>
+                    <label><input type="checkbox" name="a_circumstance" value="doublait"> Doublait</label>
+                    <label><input type="checkbox" name="a_circumstance" value="virait_droite"> Virait à droite</label>
+                    <label><input type="checkbox" name="a_circumstance" value="virait_gauche"> Virait à gauche</label>
+                    <label><input type="checkbox" name="a_circumstance" value="reculait"> Reculait</label>
+                    <label><input type="checkbox" name="a_circumstance" value="empechait"> Empiétait sur une voie réservée à la circulation en sens inverse</label>
+                    <label><input type="checkbox" name="a_circumstance" value="venait_sens_inverse"> Venait de droite (dans un carrefour)</label>
+                    <label><input type="checkbox" name="a_circumstance" value="priorite"> N'avait pas observé un signal de priorité ou un feu rouge</label>
+                </div>
+
+                <div class="section-title">Dégâts Apparents A</div>
+                <div class="form-group">
+                    <label for="a_damage">Dégâts apparents au véhicule A</label>
+                    <textarea id="a_damage" name="a_damage" rows="2" required></textarea>
+                </div>
+
+                <div class="section-title">Observations du Conducteur A</div>
+                <div class="form-group">
+                    <label for="a_observations">Observations</label>
+                    <textarea id="a_observations" name="a_observations" rows="2"></textarea>
+                </div>
+
+                <div class="section-title">Signature du Conducteur A</div>
+                <div class="form-group">
+                    <label for="a_signature">Signature</label>
+                    <input type="text" id="a_signature" name="a_signature" required>
+                </div>
+
+                <div class="section-title">Conducteur B</div>
+                <div class="vehicle-section">
+                    <div class="form-group">
+                        <label for="b_driver_name">Nom du conducteur</label>
+                        <input type="text" id="b_driver_name" name="b_driver_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="b_driver_address">Adresse</label>
+                        <textarea id="b_driver_address" name="b_driver_address" rows="2" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="b_driver_phone">Téléphone</label>
+                        <input type="text" id="b_driver_phone" name="b_driver_phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="b_driver_license">Permis de conduire n°</label>
+                        <input type="text" id="b_driver_license" name="b_driver_license" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="b_driver_license_validity">Permis valable jusqu'au</label>
+                        <input type="date" id="b_driver_license_validity" name="b_driver_license_validity" required>
+                    </div>
+                </div>
+
+                <div class="section-title">Véhicule B</div>
+                <div class="vehicle-section">
+                    <div class="form-group">
+                        <label for="b_vehicle_make">Marque, type</label>
+                        <input type="text" id="b_vehicle_make" name="b_vehicle_make" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="b_vehicle_registration">N° d'immatriculation</label>
+                        <input type="text" id="b_vehicle_registration" name="b_vehicle_registration" required>
+                    </div>
+                </div>
+
+                <div class="section-title">Assurance B</div>
+                <div class="vehicle-section">
+                    <div class="form-group">
+                        <label for="b_insurance_name">Nom de la société d'assurance</label>
+                        <input type="text" id="b_insurance_name" name="b_insurance_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="b_insurance_number">N° de contrat</label>
+                        <input type="text" id="b_insurance_number" name="b_insurance_number" required>
+                    </div>
+                </div>
+
+                <div class="section-title">Circonstances du Véhicule B</div>
+                <div class="form-group">
+                    <label>Cochez les cases appropriées</label>
+                    <label><input type="checkbox" name="b_circumstance" value="stationnement"> En stationnement / l'arrêt</label>
+                    <label><input type="checkbox" name="b_circumstance" value="quittait_stationnement"> Quittait un stationnement</label>
+                    <label><input type="checkbox" name="b_circumstance" value="prenait_stationnement"> Prenait un stationnement</label>
+                    <label><input type="checkbox" name="b_circumstance" value="ouvrant_portiere"> Ouvrait une portière</label>
+                    <label><input type="checkbox" name="b_circumstance" value="sortait_garage"> Sortait d'un parking, d'un lieu privé, d'un chemin de terre</label>
+                    <label><input type="checkbox" name="b_circumstance" value="s_engageait_parking"> S'engageait dans un parking, un lieu privé, un chemin de terre</label>
+                    <label><input type="checkbox" name="b_circumstance" value="engageait_rond_point"> S'engageait sur une place à sens giratoire</label>
+                    <label><input type="checkbox" name="b_circumstance" value="roulait_rond_point"> Roulait dans une place à sens giratoire</label>
+                    <label><input type="checkbox" name="b_circumstance" value="heurtait_arriere"> Heurtait à l'arrière en roulant dans le même sens et sur une même file</label>
+                    <label><input type="checkbox" name="b_circumstance" value="roulait_meme_sens"> Roulait dans le même sens et sur une même file</label>
+                    <label><input type="checkbox" name="b_circumstance" value="roulait_diff_sens"> Roulait dans les mêmes sens mais sur des files différentes</label>
+                    <label><input type="checkbox" name="b_circumstance" value="changeait_file"> Changeait de file</label>
+                    <label><input type="checkbox" name="b_circumstance" value="doublait"> Doublait</label>
+                    <label><input type="checkbox" name="b_circumstance" value="virait_droite"> Virait à droite</label>
+                    <label><input type="checkbox" name="b_circumstance" value="virait_gauche"> Virait à gauche</label>
+                    <label><input type="checkbox" name="b_circumstance" value="reculait"> Reculait</label>
+                    <label><input type="checkbox" name="b_circumstance" value="empechait"> Empiétait sur une voie réservée à la circulation en sens inverse</label>
+                    <label><input type="checkbox" name="b_circumstance" value="venait_sens_inverse"> Venait de droite (dans un carrefour)</label>
+                    <label><input type="checkbox" name="b_circumstance" value="priorite"> N'avait pas observé un signal de priorité ou un feu rouge</label>
+                </div>
+
+                <div class="section-title">Dégâts Apparents B</div>
+                <div class="form-group">
+                    <label for="b_damage">Dégâts apparents au véhicule B</label>
+                    <textarea id="b_damage" name="b_damage" rows="2" required></textarea>
+                </div>
+
+                <div class="section-title">Observations du Conducteur B</div>
+                <div class="form-group">
+                    <label for="b_observations">Observations</label>
+                    <textarea id="b_observations" name="b_observations" rows="2"></textarea>
+                </div>
+
+                <div class="section-title">Signature du Conducteur B</div>
+                <div class="form-group">
+                    <label for="b_signature">Signature</label>
+                    <input type="text" id="b_signature" name="b_signature" required>
+                </div>
+
+                <div class="section-title">Photos de l'accident pour le Conducteur B</div>
+                <div class="form-group">
+                    <label for="b_accident_photos">Uploader les photos de l'accident</label>
+                    <input type="file" id="b_accident_photos" name="b_accident_photos[]" accept="image/*" multiple>
+                    <button type="button" onclick="uploadPhotos('b_accident_photos')">Upload</button>
+                </div>
+                <div class="preview-container" id="b_photos_preview"></div>
+
+
+
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+
+    </div>
+
+
+    <script>
+        function uploadPhotos(inputId) {
+            const inputElement = document.getElementById(inputId);
+            const previewContainer = document.getElementById(inputId === 'a_accident_photos' ? 'a_photos_preview' : 'b_photos_preview');
+            previewContainer.innerHTML = '';
+            const files = inputElement.files;
+
+            for (const file of files) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const imgElement = document.createElement('img');
+                    imgElement.src = event.target.result;
+                    previewContainer.appendChild(imgElement);
+                }
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+
+    </div>
+</section>
+<!--/ End Feautes -->
+
+
+
+
+
+
+<!-- Start Newsletter Area -->
+<section class="newsletter section">
+    <div class="container">
+        <div class="row ">
+            <div class="col-lg-6  col-12">
+                <!-- Start Newsletter Form -->
+                <div class="subscribe-text ">
+                    <h6>Sign up for newsletter</h6>
+                    <p class="">Cu qui soleat partiendo urbanitas. Eum aperiri indoctum eu,<br> homero alterum.</p>
+                </div>
+                <!-- End Newsletter Form -->
+            </div>
+            <div class="col-lg-6  col-12">
+                <!-- Start Newsletter Form -->
+                <div class="subscribe-form ">
+                    <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+                        <input name="EMAIL" placeholder="Your email address" class="common-input" onfocus="this.placeholder = ''"
+                               onblur="this.placeholder = 'Your email address'" required="" type="email">
+                        <button class="btn">Subscribe</button>
+                    </form>
+                </div>
+                <!-- End Newsletter Form -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /End Newsletter Area -->
+
+<!-- Footer Area -->
+<footer id="footer" class="footer ">
+    <!-- Footer Top -->
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer">
+                        <h2>About Us</h2>
+                        <p>Lorem ipsum dolor sit am consectetur adipisicing elit do eiusmod tempor incididunt ut labore dolore magna.</p>
+                        <!-- Social -->
+                        <ul class="social">
+                            <li><a href="#"><i class="icofont-facebook"></i></a></li>
+                            <li><a href="#"><i class="icofont-google-plus"></i></a></li>
+                            <li><a href="#"><i class="icofont-twitter"></i></a></li>
+                            <li><a href="#"><i class="icofont-vimeo"></i></a></li>
+                            <li><a href="#"><i class="icofont-pinterest"></i></a></li>
+                        </ul>
+                        <!-- End Social -->
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer f-link">
+                        <h2>Quick Links</h2>
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Home</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>About Us</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Services</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Our Cases</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Other Links</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-12">
+                                <ul>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Consuling</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Finance</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Testimonials</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>FAQ</a></li>
+                                    <li><a href="#"><i class="fa fa-caret-right" aria-hidden="true"></i>Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer">
+                        <h2>Open Hours</h2>
+                        <p>Lorem ipsum dolor sit ame consectetur adipisicing elit do eiusmod tempor incididunt.</p>
+                        <ul class="time-sidual">
+                            <li class="day">Monday - Fridayp <span>8.00-20.00</span></li>
+                            <li class="day">Saturday <span>9.00-18.30</span></li>
+                            <li class="day">Monday - Thusday <span>9.00-15.00</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-12">
+                    <div class="single-footer">
+                        <h2>Newsletter</h2>
+                        <p>subscribe to our newsletter to get allour news in your inbox.. Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+                        <form action="mail/mail.php" method="get" target="_blank" class="newsletter-inner">
+                            <input name="email" placeholder="Email Address" class="common-input" onfocus="this.placeholder = ''"
+                                   onblur="this.placeholder = 'Your email address'" required="" type="email">
+                            <button class="button"><i class="icofont icofont-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End Footer Top -->
+    <!-- Copyright -->
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-12">
+                    <div class="copyright-content">
+                        <p>© Copyright 2018  |  All Rights Reserved by <a href="https://www.wpthemesgrid.com" target="_blank">wpthemesgrid.com</a> </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/ End Copyright -->
+</footer>
+<!--/ End Footer Area -->
+
+<!-- jquery Min JS -->
+<script src="js/jquery.min.js"></script>
+<!-- jquery Migrate JS -->
+<script src="js/jquery-migrate-3.0.0.js"></script>
+<!-- jquery Ui JS -->
+<script src="js/jquery-ui.min.js"></script>
+<!-- Easing JS -->
+<script src="js/easing.js"></script>
+<!-- Color JS -->
+<script src="js/colors.js"></script>
+<!-- Popper JS -->
+<script src="js/popper.min.js"></script>
+<!-- Bootstrap Datepicker JS -->
+<script src="js/bootstrap-datepicker.js"></script>
+<!-- Jquery Nav JS -->
+<script src="js/jquery.nav.js"></script>
+<!-- Slicknav JS -->
+<script src="js/slicknav.min.js"></script>
+<!-- ScrollUp JS -->
+<script src="js/jquery.scrollUp.min.js"></script>
+<!-- Niceselect JS -->
+<script src="js/niceselect.js"></script>
+<!-- Tilt Jquery JS -->
+<script src="js/tilt.jquery.min.js"></script>
+<!-- Owl Carousel JS -->
+<script src="js/owl-carousel.js"></script>
+<!-- counterup JS -->
+<script src="js/jquery.counterup.min.js"></script>
+<!-- Steller JS -->
+<script src="js/steller.js"></script>
+<!-- Wow JS -->
+<script src="js/wow.min.js"></script>
+<!-- Magnific Popup JS -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<!-- Counter Up CDN JS -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Main JS -->
+<script src="js/main.js"></script>
+</body>
+</html>
