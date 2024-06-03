@@ -1,7 +1,9 @@
 package com.example.PFA.services;
 
+import com.example.PFA.entities.Officer;
 import com.example.PFA.entities.Report;
 import com.example.PFA.entities.User;
+import com.example.PFA.repositories.OfficerRepository;
 import com.example.PFA.repositories.ReportRepository;
 import com.example.PFA.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,9 @@ public class ReportService {
 
     @Autowired
     private ReportRepository reportRepository;
+
+    @Autowired
+    private OfficerRepository officerRepository;
 
     public List<Report> getAllReports() {
         return reportRepository.findAll();
@@ -30,5 +35,13 @@ public class ReportService {
 
     public void deleteReport(String id) {
         reportRepository.deleteById(id);
+    }
+
+    public Report linkReportToOfficer(String reportId, String officerId) {
+        Report report = reportRepository.findById(reportId).orElseThrow(() -> new RuntimeException("Report not found"));
+        Officer officer = officerRepository.findById(officerId).orElseThrow(() -> new RuntimeException("Officer not found"));
+
+        report.setOfficer(officer);
+        return reportRepository.save(report);
     }
 }

@@ -5,10 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13b94180-b29e-4ae6-aa6e-0d51941ad520" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/Officer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/OfficerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/repositories/OfficerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/services/OfficerService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModelDeployment/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ModelDeployment/app/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/Report.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/Report.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/ReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/ReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/services/ReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/services/ReportService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>

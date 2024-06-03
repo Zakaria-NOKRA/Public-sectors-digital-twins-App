@@ -46,4 +46,9 @@ public class ReportController {
         reportService.deleteReport(id);
     }
 
+    @PostMapping("/{reportId}/officers/{officerId}")
+    public Report linkReportToOfficer(@PathVariable String reportId, @PathVariable String officerId) {
+        return reportService.linkReportToOfficer(reportId, officerId);
+    }
+
 }
