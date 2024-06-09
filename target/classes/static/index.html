@@ -7,6 +7,106 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
+<style>
+    /* Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.spinner {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border-left-color: #09f;
+        animation: spin 1s ease infinite;
+    }
+
+@keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+            .form-container {
+            background: linear-gradient(135deg, #3b82f6, #0ea5e9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            color: #fff;
+        }
+        .form-header {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .form-label {
+            font-weight: bold;
+            color: #fff;
+        }
+        .form-control {
+            border: none;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 15px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+        }
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .form-check-label {
+            color: #fff;
+        }
+        .form-check-input {
+            margin-right: 10px;
+        }
+        .form-control:focus {
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .d-flex {
+            display: flex;
+        }
+        .me-2 {
+            margin-right: 10px;
+        }
+</style>
 <body>
 <div class="main-container">
     <div class="container" id="container1">
@@ -21,6 +121,33 @@
         </div>
         <div class="check-mark" id="checkMark1"></div>
     </div>
+    <div id="modal" class="modal hidden">
+        <div class="modal-content form-container">
+            <div class="form-header">
+                <span class="close-button" onclick="toggleModal()" style="float:right; cursor:pointer; color:#fff;">&times;</span>
+                <h2>Extracted Information</h2>
+            </div>
+            <form id="validationForm">
+                <label for="cinInput" class="form-label">CIN:</label>
+                <input type="text" id="cinInput" name="cin" class="form-control" placeholder="CIN">
+
+                <label for="nameInput" class="form-label">Name:</label>
+                <input type="text" id="nameInput" name="name" class="form-control" placeholder="Name">
+
+
+                <label for="nameInput" class="form-label">Surname:</label>
+                <input type="text" id="surnameInput" name="surname" class="form-control" placeholder="Surname">
+
+                <label for="dateInput" class="form-label">Date:</label>
+                <input type="text" id="dateInput" name="date" class="form-control" placeholder="Date">
+
+                <button type="button" onclick="submitValidation()" class="form-control" style="background: #2563eb; cursor: pointer;">Validate</button>
+            </form>
+            <p id="modalMessage" style="color: #fff;"></p>
+        </div>
+    </div>
+
+
 
     <div class="container" id="container2">
         <h1>Take a photo</h1>
@@ -38,9 +165,137 @@
         <div class="check-mark" id="checkMark2"></div>
     </div>
     <div class="verify-button">
-        <button onclick="redirectToVerifyPage()">Verify</button>
+        <button id="verify" >test</button>
+        <button onclick="redirectToVerifyPage()">Submit</button>
     </div>
 </div>
 <script src="js/main1.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    var globalFile = null;
+
+    function openFileInput(inputId) {
+        document.getElementById(inputId).click();
+    }
+
+    $('#fileInput1').on('change', function() {
+        var file = this.files[0];
+        if (file) {
+            globalFile = file;
+            uploadFile(file);
+        }
+    });
+
+    $('#fileInput1').on('change', function() {
+           $('#modal').css('display', 'block');
+    });
+    function dataURLtoBlob(dataurl) {
+        var arr = dataurl.split(','),
+            mime = arr[0].match(/:(.*?);/)[1],
+            bstr = atob(arr[1]),
+            n = bstr.length,
+            u8arr = new Uint8Array(n);
+        while (n--) {
+            u8arr[n] = bstr.charCodeAt(n);
+        }
+        return new Blob([u8arr], {type: mime});
+    }
+
+    function createFileFromImageElement(imgElementId, fileName) {
+        var imgElement = document.getElementById(imgElementId);
+        var dataURL = imgElement.src;
+        var blob = dataURLtoBlob(dataURL);
+        var file = new File([blob], fileName, {type: blob.type});
+        return file;
+    }
+
+    $('#verify').on('click', function() {
+        if (globalFile) {
+            var file2 = createFileFromImageElement('previewImage2', 'capturedImage.png');
+            compare(globalFile, file2);
+        } else {
+            alert('Please upload both images before verification.');
+        }
+    });
+
+    function uploadFile(file) {
+    var formData = new FormData();
+    formData.append('img1', file);
+
+    // Show modal with spinner before sending the request
+    $('#modal').show();
+    $('#modalMessage').text('Uploading and processing...');
+    $('.spinner').show();
+
+    $.ajax({
+        url: 'http://localhost:8000/extraction',
+        type: 'POST',
+        data: formData,
+        processData: false,
+        contentType: false,
+        success: function(response) {
+            console.log('Success:', response);
+            // Populate inputs with response data
+            $('#cinInput').val(response.cin ? response.cin[0] : '');
+            $('#nameInput').val(response.name ? response.name[0]: ''); // Join array elements if needed
+            $('#surnameInput').val(response.name ? response.name[1]: ''); // Join array elements if needed
+            $('#dateInput').val(response.date ? response.date[0] : '');
+
+            // Hide spinner and update message
+            $('#modalMessage').text('Please review and validate the information.');
+            $('.spinner').hide();
+        },
+        error: function(xhr, status, error) {
+            console.error('Error:', status, error);
+            // Show error in modal
+            $('#modalMessage').text('Error: ' + error);
+            $('.spinner').hide();
+        }
+    });
+}
+
+    function toggleModal() {
+        var modal = $('#modal');
+        if (modal.css('display') === 'none') {
+            modal.css('display', 'block');
+        } else {
+            modal.css('display', 'none');
+        }
+    }
+
+    $('.close-button').on('click', function() {
+        $('#modal').hide();
+    });
+
+    window.onclick = function(event) {
+        var modal = document.getElementById('modal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    };
+
+    function compare(file1, file2) {
+        var formData = new FormData();
+        formData.append('img1', file1);
+        formData.append('img2', file2);
+
+        $.ajax({
+            url: 'http://localhost:8000/comparaison',
+            type: 'POST',
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(response) {
+                console.log('Success:', response);
+                $('#response-container').text('Comparison successful with response: ' + JSON.stringify(response));
+            },
+            error: function(xhr, status, error) {
+                console.error('Error:', status, error);
+                $('#response-container').text('Error: ' + error);
+            }
+        });
+    }
+</script>
 </body>
 </html>

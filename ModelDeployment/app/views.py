@@ -9,7 +9,7 @@ from django.http import request
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from ultralytics import YOLO
-
+from deepface import DeepFace
 
 reader = easyocr.Reader(["en"])
 
@@ -23,7 +23,6 @@ def textExtraction(request):
                 f.write(chunk)
         # Read the saved image using OpenCV
         img = cv2.imread('temp.jpg')
-        img = imageProcessing(img)
         # Perform object detection or other processing on the image
         # For example, you can use a pre-trained model for object detection
         # Replace this with your actual object detection code
@@ -45,7 +44,7 @@ def responseShaping(result):
         text = item[1]
         if re.match(cin_code, text):
             cins.append(text)
-        if re.match(name_code, text) and text not in names:
+        if re.match(name_code, text) and text not in names and ("carte" not in text) and ("royaume" not in text) :
             names.add(text)
         if re.match(date_code, text):
             dates.append(text)
@@ -91,8 +90,28 @@ def imageProcessing(img):
     thresh = cv2.threshold(closing, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)[1]
     return thresh
 
+@csrf_exempt
 def faceComparaison(request):
-    return request
+    if request.method == 'POST' and request.FILES.get('img1') and request.FILES.get('img2'):
+        img1 = request.FILES['img1']
+        img2 = request.FILES['img2']
+        # Save the uploaded images to a temporary location
+        with open('temp1.jpg', 'wb') as f:
+            for chunk in img1.chunks():
+                f.write(chunk)
+        with open('temp2.jpg','wb') as f:
+            for chunk in img2.chunks():
+                f.write(chunk)
+        img1 = cv2.imread('temp1.jpg')
+        img2 = cv2.imread('temp2.jpg')
+        result = DeepFace.verify(img1,img2)
+        if (result['verified'] == True):
+            return JsonResponse({"result":"true"})
+        else :
+            return JsonResponse({"result":"false"})
+
+
+
 
 
 

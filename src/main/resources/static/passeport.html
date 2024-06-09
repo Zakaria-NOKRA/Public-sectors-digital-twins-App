@@ -200,7 +200,7 @@
             </div>
         </div>
 
-        <form>
+        <form id="demandeForm" >
 
             <div class="form-container">
                 <div class="form-header">
@@ -318,6 +318,7 @@
                     </div>
                 </div>
             </div>
+            <button type="button" onclick="submitForm()">Submit</button>
         </form>
     </div>
 </section>
@@ -443,6 +444,35 @@
     <!--/ End Copyright -->
 </footer>
 <!--/ End Footer Area -->
+
+<script>
+    function submitForm() {
+        const form = document.getElementById('demandeForm');
+        const formData = new FormData(form);
+        const jsonData = {};
+
+        formData.forEach((value, key) => {
+            jsonData[key] = value;
+        });
+
+        fetch('/api/form/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(jsonData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            // Handle success (e.g., show a success message or redirect)
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            // Handle error (e.g., show an error message)
+        });
+    }
+</script>
 
 <!-- jquery Min JS -->
 <script src="js/jquery.min.js"></script>

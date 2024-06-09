@@ -24,6 +24,7 @@ function handleFileChange(event, previewImageId, containerId) {
 function openCamera(cameraContainerId, videoId) {
     const cameraContainer = document.getElementById(cameraContainerId);
     cameraContainer.style.display = 'block';
+
     navigator.mediaDevices.getUserMedia({ video: true })
         .then(function(stream) {
             const video = document.getElementById(videoId);
@@ -32,8 +33,27 @@ function openCamera(cameraContainerId, videoId) {
         })
         .catch(function(err) {
             console.error('Error accessing camera: ', err);
+
+            let errorMessage = 'Error accessing camera: ';
+            if (err.name === 'NotFoundError' || err.name === 'DevicesNotFoundError') {
+                errorMessage += 'No camera device found. Please ensure your camera is connected.';
+            } else if (err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError') {
+                errorMessage += 'Permission denied. Please allow camera access in your browser settings.';
+            } else if (err.name === 'NotReadableError' || err.name === 'TrackStartError') {
+                errorMessage += 'Camera is already in use by another application.';
+            } else if (err.name === 'OverconstrainedError' || err.name === 'ConstraintNotSatisfiedError') {
+                errorMessage += 'Constraints could not be satisfied by any available camera devices.';
+            } else {
+                errorMessage += 'Unknown error occurred: ' + err.message;
+            }
+
+            alert(errorMessage);
+            // Hide the camera container if the camera cannot be accessed
+            cameraContainer.style.display = 'none';
         });
 }
+
+
 
 function takePicture(videoId, previewImageId) {
     const video = document.getElementById(videoId);
