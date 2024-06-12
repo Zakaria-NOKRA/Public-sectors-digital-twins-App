@@ -8,6 +8,8 @@
     <meta name="description" content="">
     <meta name='copyright' content=''>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 
     <style>
         .form-container {
@@ -56,6 +58,74 @@
         }
         .me-2 {
             margin-right: 10px;
+        }
+
+        .btn-approve {
+            background-color: green;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .btn-refuse {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .btn-approve:hover, .btn-refuse:hover {
+            opacity: 0.8;
+        }
+
+        .btn-details {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        .btn-details:hover {
+            opacity: 0.8;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 
@@ -190,136 +260,37 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>We will help you get your passport step by step </h2>
-                    <img src="img/section-img.png" alt="#">
-                    <p>Le passeport biométrique est délivré sans condition d’âge à tout citoyen marocain qui en fait la demande, sauf décision judiciaire qui s’y oppose.
+                <h1>Manage Demandes</h1>
 
-                        Il est délivré sur demande de l’intéressé ou, lorsqu’il s’agit d’un mineur ou d’un majeur placé sous tutelle, de l’un de ses parents ou, à défaut, de son représentant légal .</p>
+                <!-- Map Container -->
+                <div id="map" style="height: 400px; width: 100%;"></div>
+
+                <!-- Table to Display Demandes -->
+                <table border="1">
+                    <thead>
+                    <tr>
+                        <th>Demande ID</th>
+                        <th>User Name</th>
+                        <th>Current State</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody id="demandeTableBody"></tbody>
+                </table>
+
+                <!-- Modal for displaying demande details -->
+                <div id="detailsModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close" onclick="closeModal()">&times;</span>
+                        <h2>Demande Details</h2>
+                        <div id="demandeDetails"></div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
-        <form id="demandeForm" >
 
-            <div class="form-container">
-                <div class="form-header">
-                    <h5>Renseignements concernant le demandeur:</h5>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="codeTimbre" class="form-label">Code Timbre *</label>
-                        <input type="text" class="form-control" id="codeTimbre" name="codeTimbre">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="cnie" class="form-label">N° CNIE *</label>
-                        <input type="text" class="form-control" id="cnie" name="cnie">
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="nom" class="form-label">Nom *</label>
-                        <input type="text" class="form-control" id="nom" name="nom">
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="prenom" class="form-label">Prénom *</label>
-                        <input type="text" class="form-control" id="prenom" name="prenom">
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="nomArabe" class="form-label">الإسم الشخصي *</label>
-                    <input type="text" class="form-control" id="nomArabe" name="nomArabe">
-                </div>
-
-                <div class="mb-3">
-                    <label for="prenomArabe" class="form-label">الإسم العائلي *</label>
-                    <input type="text" class="form-control" id="prenomArabe" name="prenomArabe">
-                </div>
-
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label for="dateNaissance" class="form-label">Date de naissance *</label>
-                        <div class="d-flex">
-                            <input type="text" class="form-control me-2" placeholder="Jour (JJ)" name="jourNaissance">
-                            <input type="text" class="form-control me-2" placeholder="Mois (MM)" name="moisNaissance">
-                            <input type="text" class="form-control" placeholder="Année (AAAA)" name="anneeNaissance">
-                        </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="noDateNaissance" name="noDateNaissance">
-                            <label class="form-check-label" for="noDateNaissance">
-                                Je ne dispose pas du jour et du mois de naissance
-                            </label>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 mb-3">
-                        <label for="lieuNaissance" class="form-label">Lieu de naissance *</label>
-                        <input type="text" class="form-control" id="lieuNaissance" name="lieuNaissance">
-                    </div>
-
-                    <div class="col-md-4 mb-3">
-                        <label for="paysNaissance" class="form-label">Pays de naissance *</label>
-                        <select class="form-select" id="paysNaissance" name="paysNaissance">
-                            <option value="MAROC" selected style="color: blue;">MAROC</option>
-                            <option value="FRANCE" style="color: blue;">FRANCE</option>
-                            <option value="USA" style="color: blue;">USA</option>
-                            <!-- Add more options for other countries as needed -->
-                        </select>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="telephone" class="form-label">N° de téléphone *</label>
-                        <div class="d-flex">
-                            <input type="text" class="form-control me-2" value="+212" readonly>
-                            <input type="text" class="form-control" id="telephone" name="telephone">
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label for="email" class="form-label">Adresse email *</label>
-                        <input type="email" class="form-control" id="email" name="email">
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="adressePostale" class="form-label">Adresse postale *</label>
-                    <input type="text" class="form-control" id="adressePostale" name="adressePostale">
-                </div>
-
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="ville" class="form-label">Ville *</label>
-                        <input type="text" class="form-control" id="ville" name="ville">
-                    </div>
-
-                    <div class="col-md-6 mb-3">
-                        <label for="codePostal" class="form-label">Code postal *</label>
-                        <input type="text" class="form-control" id="codePostal" name="codePostal">
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="pays" class="form-label">Pays *</label>
-                    <input type="text" class="form-control" id="pays" name="pays" value="MAROC" readonly>
-                </div>
-
-                <div class="mb-3">
-                    <label for="sexe" class="form-label">Sexe *</label>
-                    <div>
-                        <input type="radio" id="masculin" name="sexe" value="masculin">
-                        <label for="masculin">Masculin</label>
-                        <input type="radio" id="feminin" name="sexe" value="feminin">
-                        <label for="feminin">Féminin</label>
-                    </div>
-                </div>
-            </div>
-            <button type="button" onclick="submitForm()">Submit</button>
-        </form>
     </div>
 </section>
 <!--/ End Feautes -->
@@ -473,6 +444,93 @@
         });
     }
 </script>
+
+<script>
+    function fetchDemandes() {
+        axios.get('http://localhost:8080/demandes/')
+            .then(function (response) {
+                const demandes = response.data;
+                console.log('Fetched Demandes:', demandes); // Add logging here to debug
+                const tableBody = document.getElementById('demandeTableBody');
+                tableBody.innerHTML = ''; // Clear previous rows
+                demandes.forEach(function(demande) {
+                    const userName = demande.user ? `${demande.user.name} ${demande.user.surname}` : 'Unknown User';
+                    const state = demande.state ? demande.state.state : 'Unknown State';
+                    const row = `<tr>
+                        <td>${demande.id}</td>
+                        <td>${userName}</td>
+                        <td>${state}</td>
+                        <td>
+                            <button class="btn-approve" onclick="updateState('${demande.id}', 'Approved')">Approve</button>
+                            <button class="btn-refuse" onclick="updateState('${demande.id}', 'Refused')">Refuse</button>
+                            <button class="btn-details" onclick="viewDetails('${demande.id}')">Details</button>
+                        </td>
+                    </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            })
+            .catch(function (error) {
+                console.error('Error fetching demandes:', error);
+            });
+    }
+
+    function updateState(demandeId, newState) {
+        axios.put(`http://localhost:8080/demandes/${demandeId}/state`, null, {
+            params: { state: newState }
+        })
+        .then(function (response) {
+            alert('Demande state updated!');
+            fetchDemandes();  // Refresh the list of demandes
+        })
+        .catch(function (error) {
+            console.error('Error updating state:', error);
+        });
+    }
+
+    function viewDetails(demandeId) {
+        axios.get(`http://localhost:8080/demandes/${demandeId}`)
+            .then(function (response) {
+                const demande = response.data;
+                const detailsDiv = document.getElementById('demandeDetails');
+                detailsDiv.innerHTML = `
+                    <p><strong>Code Timbre:</strong> ${demande.codeTimbre}</p>
+                    <p><strong>N° CNIE:</strong> ${demande.cnie}</p>
+                    <p><strong>Nom:</strong> ${demande.nom}</p>
+                    <p><strong>Prénom:</strong> ${demande.prenom}</p>
+                    <p><strong>الإسم الشخصي:</strong> ${demande.nomArabe}</p>
+                    <p><strong>الإسم العائلي:</strong> ${demande.prenomArabe}</p>
+                    <p><strong>Date de naissance:</strong> ${demande.jourNaissance}/${demande.moisNaissance}/${demande.anneeNaissance}</p>
+                    <p><strong>Lieu de naissance:</strong> ${demande.lieuNaissance}</p>
+                    <p><strong>Pays de naissance:</strong> ${demande.paysNaissance}</p>
+                    <p><strong>N° de téléphone:</strong> ${demande.telephone}</p>
+                    <p><strong>Adresse email:</strong> ${demande.email}</p>
+                    <p><strong>Adresse postale:</strong> ${demande.adressePostale}</p>
+                    <p><strong>Ville:</strong> ${demande.ville}</p>
+                    <p><strong>Code postal:</strong> ${demande.codePostal}</p>
+                    <p><strong>Pays:</strong> ${demande.pays}</p>
+                    <p><strong>Sexe:</strong> ${demande.sexe}</p>
+                `;
+                showModal();
+            })
+            .catch(function (error) {
+                console.error('Error fetching demande details:', error);
+            });
+    }
+
+    function showModal() {
+        document.getElementById('detailsModal').style.display = "block";
+    }
+
+    function closeModal() {
+        document.getElementById('detailsModal').style.display = "none";
+    }
+
+    window.onload = fetchDemandes;
+</script>
+
+
+<!-- Load the Google Maps API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
 
 <!-- jquery Min JS -->

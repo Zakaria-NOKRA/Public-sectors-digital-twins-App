@@ -5,22 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="13b94180-b29e-4ae6-aa6e-0d51941ad520" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/FormController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/FormDataDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/officer.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModelDeployment/ModelDeployment/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/ModelDeployment/ModelDeployment/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModelDeployment/app/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/ModelDeployment/app/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ModelDeployment/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/ModelDeployment/app/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ModelDeployment/temp.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ModelDeployment/temp.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModelDeployment/temp1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ModelDeployment/temp1.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ModelDeployment/temp2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/ModelDeployment/temp2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/DemandeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/DemandeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/FormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/FormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/FormDataDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/controllers/FormDataDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/Demande.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/Demande.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/main1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/main1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/services/DemandeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/services/DemandeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/PFA/states/State.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/PFA/states/State.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/passeport.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/passeport.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/controllers/DemandeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/controllers/DemandeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/controllers/FormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/controllers/FormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/controllers/FormDataDTO.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/controllers/FormDataDTO.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/entities/Demande.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/entities/Demande.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/entities/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/main1.js" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/js/main1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/PFA/services/DemandeService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/PFA/services/DemandeService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/passeport.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/passeport.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,7 +86,7 @@
       <recent name="C:\Users\GF63\OneDrive\Bureau\PFA\src\main\resources\static\css" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yaml: Compose Deployment">
+  <component name="RunManager" selected="Application.PfaApplication">
     <configuration name="PfaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.example.PFA.PfaApplication" />
       <module name="PFA" />
@@ -125,8 +129,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Application.PfaApplication" />
+        <item itemvalue="Docker.docker-compose.yaml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yaml.mongodb: Compose Deployment" />
       </list>
     </recent_temporary>

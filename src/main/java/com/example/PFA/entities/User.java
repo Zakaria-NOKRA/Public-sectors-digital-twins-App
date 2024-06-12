@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -28,5 +29,5 @@ public class User {
     private Report report;
 
     @DBRef
-    private List<Demande> demandes;
+    private List<Demande> demandes = new ArrayList<>(); // Initialize the list
 }

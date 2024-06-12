@@ -8,6 +8,7 @@ import com.example.PFA.states.Refused;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -54,5 +55,9 @@ public class DemandeService {
             return demandeRepository.save(demande);
         }
         throw new RuntimeException("Demande not found");
+    }
+
+    public List<Demande> findAll() {
+        return demandeRepository.findAll();
     }
 }

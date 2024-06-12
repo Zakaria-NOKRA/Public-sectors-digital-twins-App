@@ -5,6 +5,8 @@ import com.example.PFA.services.DemandeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/demandes")
 public class DemandeController {
@@ -25,5 +27,10 @@ public class DemandeController {
     @PutMapping("/{id}/state")
     public Demande updateState(@PathVariable String id, @RequestParam String state) {
         return demandeService.updateState(id, state);
+    }
+
+    @GetMapping("/")
+    public List<Demande> getAllDemandes() {
+        return demandeService.findAll();
     }
 }
